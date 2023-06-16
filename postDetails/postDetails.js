@@ -43,6 +43,7 @@ APIService.getPostById(postId).then(post => {
     const postDetails = createElement('div', document.body);
     postDetails.classList.add('post');
     showObject(post, postDetails);
+
     const btnCommentsOfCurrentPost = createElement("button", postDetails);
     btnCommentsOfCurrentPost.innerText = "comments of current post"
     btnCommentsOfCurrentPost.addEventListener("click", (e) => {

@@ -15,6 +15,7 @@ const createElement = (tagName, superNode) => {
 
 const showSelectedKeysInObjet = (object, saveTo, ...keys) => {
     const ul = createElement('ul', saveTo)
+
     for (const key of keys) {
         const li = createElement('li', ul);
 
@@ -33,15 +34,15 @@ const APIService = {
 
 //Tusks
 APIService.getUsers().then((users) => {
-    let usersDiv = createElement('div',document.body);
+    const usersDiv = createElement('div', document.body);
     usersDiv.classList.add('users');
 
     for (const user of users) {
-        let userDiv = createElement('div',usersDiv);
+        const userDiv = createElement('div', usersDiv);
         userDiv.classList.add('user');
-        showSelectedKeysInObjet(user,userDiv,'id', 'name');
-        const linkToUserDetails = createElement('a',userDiv)
-        linkToUserDetails.innerText ='See more'
-        linkToUserDetails.setAttribute("href",`./userDetails/userDetails.html?user=${user.id}`)
+        showSelectedKeysInObjet(user, userDiv, 'id', 'name');
+        const linkToUserDetails = createElement('a', userDiv)
+        linkToUserDetails.innerText = 'See more'
+        linkToUserDetails.setAttribute("href", `./userDetails/userDetails.html?user=${user.id}`)
     }
 });

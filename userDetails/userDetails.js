@@ -67,6 +67,7 @@ APIService.getUserById(userId).then(user => {
                 const postDiv =createElement("div",postsDiv);
                 postDiv.classList.add("post");
                 showSelectedKeysInObjet(post, postDiv, "title");
+
                 const linkToPostDetails = createElement("a", postDiv);
                 linkToPostDetails.innerText = "see more";
                 linkToPostDetails.setAttribute("href", `../postDetails/postDetails.html?post=${post.id}\ `);
